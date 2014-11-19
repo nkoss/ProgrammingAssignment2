@@ -1,8 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Functions to cache inverse of a matrix
 
-## Write a short comment describing this function
-
+## makeCacheMatrix takes a matrix creates the appropriate functions
+##  necessary for caching and restoring
+## a list is returned with the 4 functions
 makeCacheMatrix <- function(x = matrix()) {
     
     ## set the inverse to NULL at start
@@ -32,9 +32,8 @@ makeCacheMatrix <- function(x = matrix()) {
     list(set = set, get = get, setInv = setInv, getInv = getInv)
 }
 
-
-## Write a short comment describing this function
-
+## cachesolve takes the output of makeCacheMatrix (a list)
+##  and returns the inverse of the original matrix
 cacheSolve <- function(x, ...) {
     ## the input x is an object created by makeVector (a list)
     
@@ -47,7 +46,7 @@ cacheSolve <- function(x, ...) {
     
     ## check if there matrix is cached, if yes, return it
     if(!is.null(inverse)) {
-        print("getting cached data")
+       # print("getting cached data")
         return(inverse)
     }
     
